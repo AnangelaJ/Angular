@@ -1,0 +1,20 @@
+<div><a class="navbar-brand" href="/">Volver</a></div>
+<div class="container">
+  <form>
+        <div class="form-row align-items-center">
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInput" >Nombre</label>
+            <input [formControl]="name" class="form-control mb-2" placeholder="Nombre Categoria" value="{{ name }}">
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="inlineFormInputGroup" >Valor</label>
+            <div class="input-group mb-2">
+              <input [formControl]="amount"  class="form-control" placeholder="Valor Categoria" value="{{ amount }}">
+            </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2" (click)="addCategory()">Grabar</button>
+          </div>
+        </div>
+    </form>
+</div>

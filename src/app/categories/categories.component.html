@@ -1,0 +1,41 @@
+<!-- <div><a class="navbar-brand" href="/edit_category">Crear Categoria</a></div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" *ngFor="let category of categories" >
+            <div class="card" style="width: 18rem;text-align: center;margin-bottom: 2rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ category.name }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ category.amount }}</h6>
+                  <button (click)="llenar(category.id, category.name, category.amount)"
+                        class="btn btn-success" style="margin-right: 2rem;">
+                        Editar
+                    </button>
+                  <button (click)="deleteCategory(category.id)"
+                  class="btn btn-danger mr-2">
+                   Eliminar
+               </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <form>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput" >Nombre</label>
+              <input [formControl]="name" class="form-control mb-2" placeholder="Nombre Categoria" value="{{ category.name }}">
+            </div>
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInputGroup" >Valor</label>
+              <div class="input-group mb-2">
+                <input [formControl]="amount"  class="form-control" placeholder="Valor Categoria" value="{{ category.amount }}">
+                <input [formControl]="id" type="hidden" class="form-control mb-2" value="{{ category.id }}">
+              </div>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2" (click)="addCategory()">Grabar</button>
+            </div>
+          </div>
+      </form>
+  </div>
